@@ -1,0 +1,59 @@
+/*
+COULEURS
+
+Gris très foncé (couleur du footer) #3e4145
+Blanc (couleur texte) #ffffff, white
+
+TABLE DES MATIERES
+
+.banniere- mise en page de la banniere (Haut)
+.contenuPage - mise en page général du contenu de la page
+.piedDePage - mise en page du pied de page
+
+HEADING - Site name, logo, main menu
+SIDEBAR - Submenu, searchbar, subsidiary navigation, utility links
+MAINCONTENT - Articles, posts, comments, images
+FOOTER - Copyright, text links
+*/
+html {
+  margin: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+}
+
+.banniere {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-liste-offre {
+  width=150px;
+}
+
+.espacement-bas-element {
+  padding-bottom: 18px;
+}
+
+.espacement-haut-element {
+  padding-top: 18px;
+}
+
+.espacement-droite-image {
+  padding-right: 10px;
+}
+
+.contenu-page {
+  background-color: white;
+  padding: 5%;
+  padding-top: 4%;
+}
+
+.pied-page {
+  background-color: #3e4145;
+  color: white;
+  margin-top: 0;
+  padding-top: 1%;
+}

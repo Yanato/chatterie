@@ -1,0 +1,76 @@
+/*
+COULEURS
+
+Presque noir (barres de navigations): #26292c
+gris très foncé : #333 (couleur de la barre)
+gris foncé : #404040 (couleur des arriere-plan des titres de la barre)
+gris : #777 (couleur des titres de la barre)
+gris claire : #777 (couleur des noms de liens)
+Blanc (couleurs du texte survol boutons) #ffffff
+
+TABLE DES MATIERES
+
+.pannelNavigationMobile, .liste - propriétés du pannel venant de gauche
+.titrePannelMobile, .textTitrePannelMobile - titres des parties
+.listeBoutonMobile, .listeBoutonMobile - propriété du bouton en lui meme
+.texteBoutonMobile, .texteBoutonMobile - propriété du texte du bouton
+*/
+
+.pannel-navigation-mobile {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.titre-pannel-mobile{
+    color: #777;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    background: #404040;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+.text-titre-pannel-mobile{
+padding: 5px 15px;
+text-transform: uppercase;
+font-weight: bold;
+font-size: 12px;
+}
+
+.liste-bouton-mobile{
+        border-top: 1px solid rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    padding: 10px;
+}
+.liste-bouton-mobile:hover{
+        background: #404040;
+}
+
+.texte-bouton-mobile{
+        text-decoration: none;
+ color: #ccc;
+text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+.texte-bouton-mobile:hover{
+     color: #fff;
+
+}
+
+.liste{
+list-style: none;
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: outside;
+    padding: 0;
+    margin: 0;
+}
+
+
+#fenetre-principale {
+    transition: margin-left .5s;
+}

@@ -1,0 +1,72 @@
+/*
+COULEURS
+
+Presque noir (barres de navigations): #26292c
+Gris foncé (survol des boutons de navigation) #454a4e
+Blanc (couleurs de survol boutons) #ffffff
+
+TABLE DES MATIERES
+
+.navigation, .navigationHaut, .boutonHaut - barre de navigation utilisateur (Haut)
+.customimsationBoutons, .menu - barre de navigation utilisateur général
+.navigationHautMobile, .boutonMobile - navigation pour utilisateur mobile
+
+HEADING - Site name, logo, main menu
+SIDEBAR - Submenu, searchbar, subsidiary navigation, utility links
+MAINCONTENT - Articles, posts, comments, images
+FOOTER - Copyright, text links
+*/
+.navigation {
+  z-index: 1000;
+  border-radius: 0;
+  background-color: #26292c;
+}
+
+.navigation-haut {
+  background-color: #26292c;
+}
+
+.bouton-haut {
+  padding: 5px;
+  float: right;
+}
+
+.customimsation-boutons {
+  background-color: #26292c;
+  padding: 25px;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border: 0px;
+  border-color: #26292c;
+  cursor: default;
+}
+
+.menu {
+  text-align: center
+}
+
+.customimsation-boutons:hover {
+  background-color: #454a4e;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.navigation-haut-mobile {
+  border: 0;
+  z-index: 1000;
+  background-color: #26292c;
+  padding-right: 2px;
+}
+
+.bouton-mobile {
+  color: #ffffff;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.bouton-mobile:hover {
+  color: #ffffff;
+}

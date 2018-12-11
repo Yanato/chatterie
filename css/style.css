@@ -1,0 +1,188 @@
+html {
+  margin: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+}
+
+@media (min-width: 960px) {
+  .main {
+    background-color: #26292c;
+  }
+}
+
+.logomobile {
+  padding-right: 5%;
+}
+
+.mobilenavigation {
+  border: 0;
+  z-index: 1000;
+  background-color: #26292c;
+}
+
+.mobilebutton {
+  color: #ffffff;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.mobilebutton:hover {
+  color: #b4b4b4;
+}
+
+.menu {
+  text-align: center
+}
+
+.navigation {
+  z-index: 1000;
+  border-radius: 0;
+  background-color: #26292c;
+}
+
+#ownbutton {
+  background-color: #26292c;
+  padding-top: 28px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border: 0px;
+  border-top-style: solid;
+  border-color: #26292c;
+  cursor: default;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+#ownbutton:hover {
+  background-color: #454a4e;
+}
+
+h2 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #919191;
+}
+
+.rightpannel {
+  padding-bottom: 25px;
+}
+
+.page {
+  padding-top: 50px;
+}
+
+.container {
+  background-color: white;
+  padding: 5%;
+  padding-top: 4%;
+}
+
+.footer {
+  background-color: #3e4145;
+  color: white;
+  margin-top: 0;
+  padding-top: 1%;
+}
+
+#espace-connexion-utilisateur {
+  padding: 20px;
+}
+
+#espace-connexion-utilisateur div {
+  padding: 2px;
+}
+
+.connexion-administration h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+.messageErreur {
+  padding: 5px;
+}
+
+.menu-administration {
+  background-color: #26292c;
+}
+
+.ownbuttonAdministration {
+  background-color: #454a4e;
+  padding-top: 28px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: default;
+  border-bottom: 10px solid #72797f;
+  margin-right: -3px;
+}
+
+.ownbuttonAdministration:hover {
+  background-color: #72797f;
+}
+
+.ownbuttonAdministration.deco {
+  background-color: #b16464;
+  border-bottom: 10px solid #e0b3b3;
+}
+
+.ownbuttonAdministration.deco:hover {
+  background-color: #e0b3b3;
+}
+
+.ownbuttonAdministration.site {
+  background-color: #6497b1;
+  border-bottom: 10px solid #b3cde0;
+}
+
+.ownbuttonAdministration.site:hover {
+  background-color: #b3cde0;
+}
+
+.uk-dropdown {
+  margin: 0;
+  border-radius: 0;
+  background-color: #454a4e;
+  letter-spacing: normal;
+  border-style: solid;
+  border-color: black;
+  border-top: 0px;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.uk-nav-dropdown>li>a {
+  color: white;
+  padding: 10px;
+}
+
+.uk-nav-dropdown>li>a:hover, .uk-nav-dropdown>li>a:focus {
+  background: #72797f;
+}
+
+.container-administration {
+  background-color: #ddd;
+  padding: 3% 2% 5% 2%;
+}
+
+.content {
+  padding: 10px;
+  border: 0;
+  background-color: #fff;
+  background-image: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.titreAdministration {
+  padding: 10px 0px 0px 10px;
+}
