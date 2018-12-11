@@ -8,4 +8,4 @@
     DocumentRoot "C:/xampp/htdocs/chatterie/"<br />
 	ErrorLog "logs/chatterie-error.log"<br />
 	CustomLog "logs/chatterie-access.log" common <br />
-</VirtualHost><br />
+</ VirtualHost><br />
