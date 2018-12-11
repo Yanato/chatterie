@@ -1,5 +1,7 @@
 <?php
 include "recurent/entete.php";
+require_once DAO_CONTENU;
+
 afficherEntete(_("Connexion administration"));
 ?>
          <div class="container-administration">
@@ -38,11 +40,11 @@ afficherEntete(_("Connexion administration"));
 
                       foreach ($requete as $ligne) {
                           echo "<h2>Texte".$ligne['numTexte']."</h2>";
-                          echo "<form 'class=uk-form' action='fonctadmin.php' method='GET'>
+                          echo "<form 'class=uk-form' action='". $_SERVER['PHP_SELF']."' method='GET'>
                                           <div class='uk-form-row'>
                                             <fieldset>
                                             <input type='text' name='numPage' value=".$idPage." hidden>
-                                            <input type='text' name='numTexte' value=".$ligne['numPage']." hidden>
+                                            <input type='text' name='numTexte' value=".$ligne['numTexte']." hidden>
                                             <textarea data-uk-htmleditor name='texte' cols='150' rows='10' placeholder='Textarea'>".$ligne['texte']."</textarea>
                                             </div>
                                               <input class='uk-button' type='submit' value='Modifier' />

@@ -17,4 +17,11 @@ require_once $prefixCheminAdministration."DAO/ConnexionDB.php";
 $connexion = ConnexionDB::connecter();
 
 define("DAO_UTILISATEUR", $prefixCheminAdministration."DAO/DAOutilisateur.php");
-define("DAO_ADMINISTRATEUR", $prefixCheminAdministration."DAO/DAOadministrateur.php");
+define("DAO_CONTENU", $prefixCheminAdministration."DAO/DAOcontenu.php");
+define("DAO_ESPACE", $prefixCheminAdministration."DAO/DAOespace.php");
+
+define("CONTROLEUR_ESPACE", $prefixCheminAdministration."controleur/controleurEspace.php");
+
+
+define("MODELE_ESPACE", $prefixCheminAdministration."modele/Espace.class.php");
+define("MODELE_CONTENU", $prefixCheminAdministration."modele/Contenu.class.php");

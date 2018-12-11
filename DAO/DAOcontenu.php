@@ -1,31 +1,18 @@
 <?php
+require_once MODELE_CONTENU;
 
-function fetchtext($numpage, $numtext)
-{
-    global $connexion;
-    $sql = "SELECT * FROM contenu WHERE 'numPage'=$numpage & 'numtext'=$numtext";
-    $requete = $connexion->prepare($sql);
-    $requete->execute();
-    $requete->setFetchMode(PDO::FETCH_ASSOC) ;
+  function fetchpagename($idPage)
+  {
+      global $connexion;
+      $sql = "SELECT * FROM page WHERE id=$idPage";
+      $requete = $connexion->query($sql);
+      $requete->execute();
+      $requete->setFetchMode(PDO::FETCH_ASSOC) ;
 
-    foreach ($requete as $ligne) {
-        echo $ligne['texte'];
-    }
-}
-
-function fetchpagename($idPage)
-{
-    global $connexion;
-    $sql = "SELECT * FROM page WHERE id=$idPage";
-    $requete = $connexion->query($sql);
-    $requete->execute();
-    $requete->setFetchMode(PDO::FETCH_ASSOC) ;
-
-    foreach ($requete as $ligne) {
-        return $ligne['nomPage'];
-    }
-}
-
+      foreach ($requete as $ligne) {
+          return $ligne['nomPage'];
+      }
+  }
 
 if (!empty($_GET)) {
     if (!empty($_GET["numPage"])) {
@@ -49,4 +36,5 @@ if (!empty($_GET)) {
             echo "<p>Erreur: ".$e->getMessage() ;
         }
     }
+
 }

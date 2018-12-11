@@ -1,7 +1,6 @@
 <?php
 $estEnAdministration = true;
 require_once"../configuration/configuration.php";
-require_once DAO_ADMINISTRATEUR;
 
 
 
