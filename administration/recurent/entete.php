@@ -28,10 +28,7 @@ function afficherEnTete($titre)
 <script src="https://getuikit.com/v2/vendor/codemirror/codemirror.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
 <script src="https://getuikit.com/v2/src/js/components/htmleditor.js"></script>
-
-
-
-
+s
 <script type="text/javascript" src="../lib/js/components/slideshow.js"></script>
 <script type="text/javascript" src="../lib/js/components/slideshow-fx.js"></script>
 <script type="text/javascript" src="../lib/js/components/sticky.js"></script>
@@ -39,6 +36,7 @@ function afficherEnTete($titre)
 <script type="text/javascript" src="../lib/js/core/modal.min.js"></script>
 <script type="text/javascript" src="../lib/js/components/parallax.min.js"></script>
 <script type="text/javascript" src="../js/browserchecker.js"></script>
+<script type="text/javascript" src="../js/drawEspace.js"></script>
 
 
 

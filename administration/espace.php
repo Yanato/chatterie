@@ -48,19 +48,24 @@ afficherEntete(_("Editer les espaces"));
                 <tbody>
                   <?php
                   $id = 0;
+                  $nbrTabJs = 0;
                   $listeEspace = DAOespace::getListeEspace();
-                  foreach($listeEspace as $espace){
-                    $id++;
-                  echo "                  <tr>
+                  foreach ($listeEspace as $espace) {
+                      $id++;
+                      echo "                  <tr>
                                     <form class'uk-form' action='". $_SERVER['PHP_SELF']."' method='GET'>
                                     <td><input readonly name='idEspace' type='text' value=".$espace->getId()."></td>
                                     <td><input name='nomEspace' type='text' value=".$espace->getNom()."></td>
                                     <td><input name='capaEspace' type='text' value=".$espace->getCapacite()."></td>
-                                    <td><input name='colorEspace' type='color' value=".$espace->getColor ()."></td>
+                                    <td><input name='colorEspace' type='color' value=".$espace->getColor()."></td>
                                     <td><input class='uk-button uk-button-primary' type='submit' value='Modifier'/></td>
                                     <td>        <a href='".$_SERVER['PHP_SELF']."?suppr=".$espace->getId()."' class='uk-button uk-button-danger'>Supprimer</a></td>
                                     </form>
                                     </tr>";
+                      $nomJs[] =  $espace->getNom();
+                      $capaciteJs[] =  $espace->getCapacite();
+                      $colorJs[] =  $espace->getColor();
+                      $nbrTabJs =  $nbrTabJs+1;
                   }
                   $id = $id+1;
                   echo "<tr>
@@ -80,6 +85,20 @@ afficherEntete(_("Editer les espaces"));
        </div>
        <div class="uk-width-1-2">
 
+         <canvas id="cnv" width="700" height="500"></canvas>
+
+              <script type="text/javascript">
+              for (i = 0; i < <?php echo $nbrTabJs?>; i++){
+                var nbrCase = <?php echo json_encode($capaciteJs); ?>;
+                var nomCase = <?php echo json_encode($nomJs); ?>;
+                var colorCase = <?php echo json_encode($colorJs); ?>;
+                var long = 40+90*i;
+
+                  drawGrid(nbrCase[i],0,long,80,colorCase[i], nomCase[i]);
+
+              }
+               </script>
+</div>
 </div>
 </div>
      </div>

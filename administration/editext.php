@@ -42,13 +42,11 @@ afficherEntete(_("Connexion administration"));
                           echo "<h2>Texte".$ligne['numTexte']."</h2>";
                           echo "<form 'class=uk-form' action='". $_SERVER['PHP_SELF']."' method='GET'>
                                           <div class='uk-form-row'>
-                                            <fieldset>
                                             <input type='text' name='numPage' value=".$idPage." hidden>
                                             <input type='text' name='numTexte' value=".$ligne['numTexte']." hidden>
                                             <textarea data-uk-htmleditor name='texte' cols='150' rows='10' placeholder='Textarea'>".$ligne['texte']."</textarea>
                                             </div>
                                               <input class='uk-button' type='submit' value='Modifier' />
-                                        </fieldset>
                                       </form>
                                                ";
                       }

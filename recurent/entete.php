@@ -26,6 +26,12 @@ function afficherEnTete($titre)
 <script type="text/javascript" src="lib/js/core/modal.min.js"></script>
 <script type="text/javascript" src="lib/js/components/parallax.min.js"></script>
 <script type="text/javascript" src="js/browserchecker.js"></script>
+
+<link id="data-uikit-theme" rel="stylesheet" href="https://getuikit.com/v2/docs/css/uikit.docs.min.css">
+<script type="text/javascript" src="lib/js/components/datepicker.js"></script>
+<script type="text/javascript" src="lib/js/components/form-select.js"></script>
+
+
 <link rel="icon" type="image/jpg" href="image/favicon.ico">
 </head>
 
