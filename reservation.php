@@ -1,5 +1,9 @@
 <?php
 include "recurent/entete.php";
+require_once DAO_RESERVATION;
+require_once CONTROLEUR_RESERVATION;
+
+
 afficherEntete(_("Accueil"));
 ?>
          <div class="container">
@@ -8,7 +12,7 @@ afficherEntete(_("Accueil"));
 
                 <div class=" uk-width-3-5">
 
-              <form class="uk-form" action='controleur/controleurReservation.php' method='GET'>
+              <form class="uk-form" action='<?php $_SERVER['PHP_SELF']?>' method='GET'>
        <legend>Effectuer une demande de réservation</legend>
        <div class="uk-grid uk-grid-collapse">
          <div class=" uk-width-1-3">
@@ -39,18 +43,18 @@ afficherEntete(_("Accueil"));
              <div class="uk-grid uk-grid-collapse">
                <div class=" uk-width-1-2">
              <div class="uk-form-row">
-               <label class="uk-form-label" >Date de debut</label>
+               <label class="uk-form-label" >Date de debut*</label>
                <div class="uk-form-controls">
-                 <input name="resDateDeb" type="text" data-uk-datepicker="{format:'DD.MM.YYYY', minDate:0, maxDate:90}">
+                 <input name="resDateDeb" type="text" required="" data-uk-datepicker="{format:'DD.MM.YYYY', minDate:0, maxDate:90}">
                  </div>
              </div>
            </div>
 
            <div class=" uk-width-1-2">
          <div class="uk-form-row">
-           <label class="uk-form-label" >Date de fin</label>
+           <label class="uk-form-label" >Date de fin*</label>
            <div class="uk-form-controls">
-             <input name="resDateFin" type="text" data-uk-datepicker="{format:'DD.MM.YYYY', minDate:1, maxDate:90}">
+             <input name="resDateFin" type="text" required="" data-uk-datepicker="{format:'DD.MM.YYYY', minDate:1, maxDate:90}">
            </div>
          </div>
        </div>
@@ -65,9 +69,9 @@ afficherEntete(_("Accueil"));
              </div>
 
              <div class="uk-form-row">
-               <label class="uk-form-label" >Conditions demandées*</label>
+               <label class="uk-form-label" >Conditions demandées</label>
                <div class="uk-form-controls">
-                 <textarea name="resConditions" type="text" required="" rows="3"  class="uk-form-width-large" placeholder="ex:&#10;-Maladies&#10;-en box, en maison...&#10;-chauffée ou non" ></textarea>
+                 <textarea name="resConditions" type="text" rows="3"  class="uk-form-width-large" placeholder="ex:&#10;-Maladies&#10;-en box, en maison...&#10;-chauffée ou non" ></textarea>
                </div>
              </div>
 

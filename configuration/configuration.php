@@ -19,9 +19,12 @@ $connexion = ConnexionDB::connecter();
 define("DAO_UTILISATEUR", $prefixCheminAdministration."DAO/DAOutilisateur.php");
 define("DAO_CONTENU", $prefixCheminAdministration."DAO/DAOcontenu.php");
 define("DAO_ESPACE", $prefixCheminAdministration."DAO/DAOespace.php");
+define("DAO_RESERVATION", $prefixCheminAdministration."DAO/DAOreservation.php");
 
 define("CONTROLEUR_ESPACE", $prefixCheminAdministration."controleur/controleurEspace.php");
+define("CONTROLEUR_RESERVATION", $prefixCheminAdministration."controleur/controleurReservation.php");
 
 
 define("MODELE_ESPACE", $prefixCheminAdministration."modele/Espace.class.php");
 define("MODELE_CONTENU", $prefixCheminAdministration."modele/Contenu.class.php");
+define("MODELE_RESERVATION", $prefixCheminAdministration."modele/Reservation.class.php");

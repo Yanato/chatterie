@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 11 déc. 2018 à 18:30
+-- Généré le :  jeu. 13 déc. 2018 à 17:02
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.0.28
 
@@ -57,7 +57,7 @@ CREATE TABLE `contenu` (
 --
 
 INSERT INTO `contenu` (`numPage`, `numTexte`, `texte`) VALUES
-(1, 1, '<h1>Heading</h1>\r\ne\r\n<p>Lorem ipsum dolor sit <strong>amet</strong>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut laboree et dolore magna aliqua. <a href=\"#\">This is a link</a></p>\r\n\r\n<ul>\r\n    <li>Item</li>\r\n    <li>Item</li>\r\n    <li>Item</li>\r\n</ul>\r\n\r\n<h2>Heading</h2>\r\n\r\n<p>Ut enim ad <em>minim</em> veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>'),
+(1, 1, '<h1>Heading</h1>\r\ne\r\n<p>Lorem ipsum dolor sit <strong>amet</strong>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut laboree et dolore magna vrhoe4tiue4uo. <a href=\"#\">This is a link</a></p>\r\n\r\n<ul>\r\n    <li>Item</li>\r\n    <li>Item</li>\r\n    <li>Item</li>\r\n</ul>\r\n\r\n<h2>Headeing</h2>\r\n\r\n<p>Ut enim ad <em>minim</em> veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>'),
 (1, 2, 'oui biensur');
 
 -- --------------------------------------------------------
@@ -78,10 +78,8 @@ CREATE TABLE `espace` (
 --
 
 INSERT INTO `espace` (`idEspace`, `nom`, `capacite`, `color`) VALUES
-(1, 'A', 22, '#f45942'),
-(2, 'B', 5, '#f4d941'),
-(3, 'C', 4, '#000000'),
-(4, '', 2, '#000000');
+(2, 'la', 8, '#4f35ff'),
+(3, 'C', 6, '#28e600');
 
 -- --------------------------------------------------------
 
@@ -105,6 +103,51 @@ INSERT INTO `page` (`id`, `nomPage`) VALUES
 (6, 'Contact'),
 (1, 'Accueil'),
 (2, 'La chatterie');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `idResa` int(10) NOT NULL,
+  `nom` varchar(50) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `phone` int(10) NOT NULL,
+  `nbrChat` int(10) NOT NULL,
+  `dateDeb` date NOT NULL,
+  `dateFin` date NOT NULL,
+  `conditions` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `reservation`
+--
+
+INSERT INTO `reservation` (`idResa`, `nom`, `mail`, `phone`, `nbrChat`, `dateDeb`, `dateFin`, `conditions`) VALUES
+(1, 'nice', 'test@test.fr', 675453676, 1, '2018-12-12', '2018-12-15', 'test'),
+(2, 'nice', 'test@test.fr', 675453676, 1, '2018-12-12', '2018-12-15', 'test');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`idResa`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `idResa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

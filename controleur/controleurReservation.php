@@ -1,30 +1,37 @@
 <?php
-require_once DAO_ESPACE;
+require_once DAO_RESERVATION;
+
 
 if (!empty($_GET)) {
-	if(!empty($_GET['suppr'])){
-		supprimerEspace($_GET['suppr']);
+	if(!empty($_GET['resName'])){
+		ajouterReservation();
 	}
-	 if(!empty($_GET['idEspace'])){
-		modifierEspace($_GET['idEspace']);
-	}
-	 if(!empty($_GET['newIdEspace'])){
-		ajouterEspace($_GET['newIdEspace']);
-	}
+//	 if(!empty($_GET['idEspace'])){
+//		modifierEspace($_GET['idEspace']);
+//	}
+//	 if(!empty($_GET['newIdEspace'])){
+//		ajouterEspace($_GET['newIdEspace']);
+//	}
 }
 
-function ajouterEspace($idEspace)
+function ajouterReservation()
 {
-	$espace = new espace( "" ,"" ,"" ,"");
+	$reservation = new reservation( "" ,"" ,"" ,"","" ,"" ,"" ,"");
+	$editedDateDeb = date("Y-m-d", strtotime($_GET['resDateDeb']));
+	$editedDateFin = date("Y-m-d", strtotime($_GET['resDateFin']));
 
-	$espace->setId($idEspace);
-	$espace->setNom($_GET['newNomEspace']);
-	$espace->setCapacite($_GET['newCapaEspace']);
-	$espace->setColor($_GET['newColorEspace']);
+	$reservation->setId(NULL);
+	$reservation->setNom($_GET['resName']);
+	$reservation->setMail($_GET['resMail']);
+	$reservation->setPhone($_GET['resPhone']);
+	$reservation->setNbrChat($_GET['resNbrChat']);
+	$reservation->setDateDeb($editedDateDeb);
+	$reservation->setDateFin($editedDateFin);
+	$reservation->setConditions($_GET['resConditions']);
 
-	if($espace->estValide())
+	if($reservation->estValide())
 	{
-		DAOespace::ajouterEspace($espace);
+		DAOreservation::ajouterResa($reservation);
 		return true;
 	}
 	return false;

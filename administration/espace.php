@@ -94,7 +94,7 @@ afficherEntete(_("Editer les espaces"));
                 var colorCase = <?php echo json_encode($colorJs); ?>;
                 var long = 40+90*i;
 
-                  drawGrid(nbrCase[i],0,long,80,colorCase[i], nomCase[i]);
+                  drawGrid(nbrCase[i],5,long,80,colorCase[i], nomCase[i]);
 
               }
                </script>

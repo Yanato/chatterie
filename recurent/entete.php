@@ -1,6 +1,8 @@
 <?php
 require_once"configuration/configuration.php";
 require_once DAO_UTILISATEUR;
+require_once DAO_RESERVATION;
+require_once CONTROLEUR_RESERVATION;
 
 function afficherEnTete($titre)
 {
