@@ -54,7 +54,9 @@ afficherEntete(_("Accueil"));
             <div class="uk-form-row">
                 <textarea name='message' cols="" rows="5" required="" placeholder="Message*" class="uk-form-width-large"></textarea>
             </div>
-
+			<div class="uk-form-row">
+				<div class="g-recaptcha" data-sitekey="6LesQocUAAAAADaIABT0gp4YcS3kcH-f9DJAXc8B"></div>
+			</div>
             <div class="uk-form-row">
                 <button class="uk-button">Envoyer</button>
             </div>
