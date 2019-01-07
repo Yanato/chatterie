@@ -9,8 +9,9 @@ class Reservation
     private $dateDeb;
     private $dateFin;
     private $conditions;
+    private $statut;
 
-    public function __construct($idResa, $nom, $mail, $phone, $nbrChat, $dateDeb, $dateFin, $conditions)
+    public function __construct($idResa, $nom, $mail, $phone, $nbrChat, $dateDeb, $dateFin, $conditions, $statut)
     {
         $this->idResa = $idResa;
         $this->nom = $nom;
@@ -20,6 +21,7 @@ class Reservation
         $this->dateDeb = $dateDeb;
         $this->dateFin = $dateFin;
         $this->conditions = $conditions;
+        $this->statut = $statut;
     }
 
     //----------------------------------- Accesseurs ---------------------------------------------
@@ -58,6 +60,10 @@ class Reservation
     {
         return $this->conditions;
     }
+    public function getStatut()
+    {
+        return $this->statut;
+    }
 
     //----------------------------------- Mutateurs ---------------------------------------------
 
@@ -94,6 +100,10 @@ class Reservation
     public function setConditions($conditions)
     {
         $this->conditions=$conditions;
+    }
+    public function setStatut($statut)
+    {
+        $this->statut=$statut;
     }
 
     public function estValide(){

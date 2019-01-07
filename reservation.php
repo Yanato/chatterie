@@ -20,7 +20,7 @@ afficherEntete(_("Accueil"));
            <div class="uk-form-row">
              <label class="uk-form-label" >Nom complet*</label>
              <div class="uk-form-controls">
-               <input name="resName" type="text" required="" class="uk-form-width-medium" placeholder="ex: Michel Dupon" >
+               <input name="clientResName" type="text" required="" class="uk-form-width-medium" placeholder="ex: Michel Dupon" >
              </div>
            </div>
 
@@ -74,7 +74,7 @@ afficherEntete(_("Accueil"));
                  <textarea name="resConditions" type="text" rows="3"  class="uk-form-width-large" placeholder="ex:&#10;-Maladies&#10;-en box, en maison...&#10;-chauffée ou non" ></textarea>
                </div>
              </div>
-
+<input name="statut" type="hidden" value="en attente">
 
            </div>
 

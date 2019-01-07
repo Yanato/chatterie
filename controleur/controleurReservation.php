@@ -3,31 +3,38 @@ require_once DAO_RESERVATION;
 
 
 if (!empty($_GET)) {
-	if(!empty($_GET['resName'])){
-		ajouterReservation();
+	if(!empty($_GET['clientResName'])){
+		ajouterReservation($_GET['clientResName']);
 	}
-//	 if(!empty($_GET['idEspace'])){
-//		modifierEspace($_GET['idEspace']);
-//	}
-//	 if(!empty($_GET['newIdEspace'])){
-//		ajouterEspace($_GET['newIdEspace']);
-//	}
+	 if(!empty($_GET['idResa'])){
+		modifierReservation($_GET['idResa']);
+	}
+	 if(!empty($_GET['newIdReservation'])){
+		ajouterReservation($_GET['resName']);
+	}
+	if(!empty($_GET['suppr'])){
+		supprimerReservation($_GET['suppr']);
+	}
+	if(!empty($_GET['archiverTout'])){
+		updateArchive(1);
+	}
 }
 
-function ajouterReservation()
+function ajouterReservation($name)
 {
-	$reservation = new reservation( "" ,"" ,"" ,"","" ,"" ,"" ,"");
+	$reservation = new reservation( "" ,"" ,"" ,"","" ,"" ,"" ,"","");
 	$editedDateDeb = date("Y-m-d", strtotime($_GET['resDateDeb']));
 	$editedDateFin = date("Y-m-d", strtotime($_GET['resDateFin']));
 
 	$reservation->setId(NULL);
-	$reservation->setNom($_GET['resName']);
+	$reservation->setNom($name);
 	$reservation->setMail($_GET['resMail']);
 	$reservation->setPhone($_GET['resPhone']);
 	$reservation->setNbrChat($_GET['resNbrChat']);
 	$reservation->setDateDeb($editedDateDeb);
 	$reservation->setDateFin($editedDateFin);
 	$reservation->setConditions($_GET['resConditions']);
+	$reservation->setStatut($_GET['statut']);
 
 	if($reservation->estValide())
 	{
@@ -37,25 +44,31 @@ function ajouterReservation()
 	return false;
 }
 
-function modifierEspace($idEspace)
+function modifierReservation($idResa)
 {
-	$espace = new espace( "" ,"" ,"" ,"");
-	$espace->setId($idEspace);
-	$espace->setNom($_GET['nomEspace']);
-	$espace->setCapacite($_GET['capaEspace']);
-	$espace->setColor($_GET['colorEspace']);
+	$reservation = new reservation( "" ,"" ,"" ,"","","","","","");
+	$reservation->setId($idResa);
+	$reservation->setNom($_GET['nomResa']);
+	$reservation->setMail($_GET['mailResa']);
+	$reservation->setPhone($_GET['phoneResa']);
+	$reservation->setNbrChat($_GET['nbrChatResa']);
+	$reservation->setDateDeb($_GET['dateDebResa']);
+	$reservation->setDateFin($_GET['dateFinResa']);
+	$reservation->setConditions($_GET['conditionsResa']);
+	$reservation->setStatut($_GET['statut']);
 
-	if($espace->estValide())
+	if($reservation->estValide())
 	{
-		DAOespace::modifierEspace($espace);
+		DAOreservation::modifierReservation($reservation);
 		return true;
 	}
 	return false;
 
 }
 
-function supprimerEspace($idEspace){
-	$espace = DAOespace::supprimerEspace($idEspace);
+
+function supprimerReservation($idResa){
+	$reservation = DAOreservation::supprimerReservation($idResa);
 }
 
 ?>
