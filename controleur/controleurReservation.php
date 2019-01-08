@@ -16,8 +16,12 @@ if (!empty($_GET)) {
 		supprimerReservation($_GET['suppr']);
 	}
 	if(!empty($_GET['archiverTout'])){
-		updateArchive(1);
+		updateArchive();
 	}
+}
+
+function updateArchive(){
+	DAOreservation::updateArchive();
 }
 
 function ajouterReservation($name)

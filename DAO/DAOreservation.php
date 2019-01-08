@@ -37,11 +37,16 @@ class DAOreservation
         }
     }
 
-    public static function getListeReservation()
+    public static function getListeReservation($filter)
     {
+      if($filter==null){
+        $sql = "SELECT * FROM reservation";
+      }else{
+        $sql = "SELECT * FROM reservation WHERE statut = '".$filter."'";
+      //  echo $sql;
+      }
         $listeReservation = [];
         global $connexion;
-        $sql = "SELECT * FROM reservation";
         $requete = $connexion->prepare($sql);
         $requete->execute();
 
@@ -62,29 +67,7 @@ class DAOreservation
         return $listeReservation;
     }
 
-    public static function getListeReservationConfirmed()
-    {
-        $listeReservation = [];
-        global $connexion;
-        $sql = "SELECT * FROM reservation";
-        $requete = $connexion->prepare($sql);
-        $requete->execute();
 
-        while($enregistrementReservation = $requete->fetch(PDO::FETCH_ASSOC))
-        {
-            $listeReservation[] = new Reservation(
-                $enregistrementReservation["idResa"],
-                $enregistrementReservation["nom"],
-                $enregistrementReservation["mail"],
-                $enregistrementReservation["phone"],
-                $enregistrementReservation["nbrChat"],
-                $enregistrementReservation["dateDeb"],
-                $enregistrementReservation["dateFin"],
-                $enregistrementReservation["conditions"]);
-        }
-
-        return $listeReservation;
-    }
 
 
     public static function modifierReservation($reservation)
@@ -146,11 +129,11 @@ class DAOreservation
       }
   }
 
-  public static function updateArchive($ok){
+  public static function updateArchive(){
     try {
       $todayDate = date("Y-m-d");
 
-
+$test = 0;
 
 
       $listeReservation = [];
@@ -160,13 +143,28 @@ class DAOreservation
       $requete->execute();
 
       while($enregistrementReservation = $requete->fetch(PDO::FETCH_ASSOC))
-      {
-        if($enregistrementReservation["dateFin"] < $todayDate){
-          echo"ok";
+      { //WIP, break boucle
+        if($enregistrementReservation["statut"] != "archivé"){
+          if($enregistrementReservation["dateFin"] < $todayDate){
+            $newStatut = 'archivé';
+            $sql = "UPDATE reservation SET statut=:statut
+                WHERE idResa = :id";
+            $requete = $connexion->prepare($sql);
+            $requete->bindParam(':id', $enregistrementReservation["idResa"], PDO::PARAM_INT);
+            $requete->bindParam(':statut', $newStatut , PDO::PARAM_STR);
+
+            try {
+                $requete->execute();
+            } catch (PDOException $e) {
+
+                echo($e);
+                die("...");
+            }
+
+          }
         }
 
       }
-
       return $listeReservation;
 
         $codeRetourHTTP = 200; // Code requête Ok (même si retour vide)

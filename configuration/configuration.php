@@ -28,3 +28,5 @@ define("CONTROLEUR_RESERVATION", $prefixCheminAdministration."controleur/control
 define("MODELE_ESPACE", $prefixCheminAdministration."modele/Espace.class.php");
 define("MODELE_CONTENU", $prefixCheminAdministration."modele/Contenu.class.php");
 define("MODELE_RESERVATION", $prefixCheminAdministration."modele/Reservation.class.php");
+
+define("TABLEAU_RESERVATION", $prefixCheminAdministration."administration/tableauResas.php");
