@@ -38,8 +38,10 @@ function afficherEnTete($titre)
 <script type="text/javascript" src="../js/browserchecker.js"></script>
 <script type="text/javascript" src="../js/drawEspace.js"></script>
 
-
-
+<link rel='stylesheet' href='../fullcalendar/fullcalendar.css' />
+<script src='../lib/moment.js'></script>
+<script src='../fullcalendar/fullcalendar.js'></script>
+<script src='../fullcalendar/locale/fr.js'></script>
 
 
 <link rel="icon" type="image/jpg" href="../image/favicon.ico">

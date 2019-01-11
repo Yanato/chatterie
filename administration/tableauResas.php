@@ -21,21 +21,22 @@ function afficherTableau($filtre)
     </thead>
     <tbody>
       <?php
+
       $nbrTabJs = 0;
       $listeReservation = DAOreservation::getListeReservation($filtre);
       foreach ($listeReservation as $reservation) {
           echo "                  <tr>
                         <form class'uk-form' action='". $_SERVER['PHP_SELF']."' method='GET'>
-                        <td><input size='3' readonly name='idResa' type='text' value=".$reservation->getId()."></td>
-                        <td><input name='nomResa' type='text' value=".$reservation->getNom()."></td>
-                        <td><input name='mailResa' type='text' value=".$reservation->getMail()."></td>
-                        <td><input size='10' name='phoneResa' type='text' value=".$reservation->getPhone()."></td>
-                        <td><input size='3' name='nbrChatResa' type='text' value=".$reservation->getNbrChat()."></td>
-                        <td><input size='10' name='dateDebResa' type='date' value=".$reservation->getDateDeb()."></td>
-                        <td><input size='10' name='dateFinResa' type='date' value=".$reservation->getDateFin()."></td>
-                        <td><input name='conditionsResa' type='text' value=".$reservation->getConditions()."></td>
+                        <td><input size='3' readonly name='idResa' type='text' value='".$reservation->getId()."'></td>
+                        <td><input name='nomResa' type='text' value='".$reservation->getNom()."'></td>
+                        <td><input name='mailResa' type='text' value='".$reservation->getMail()."'></td>
+                        <td><input size='10' name='phoneResa' type='text' value='".$reservation->getPhone()."'></td>
+                        <td><input size='3' name='nbrChatResa' type='text' value='".$reservation->getNbrChat()."'></td>
+                        <td><input size='10' name='dateDebResa' type='date' value='".$reservation->getDateDeb()."'></td>
+                        <td><input size='10' name='dateFinResa' type='date' value='".$reservation->getDateFin()."'></td>
+                        <td><input name='conditionsResa' type='text' value='".$reservation->getConditions()."'></td>
                         <td><select name='statut'>
-                          <option selected disabled hidden>".$reservation->getStatut()."</option>
+                          <option selected hidden>".$reservation->getStatut()."</option>
 <option>en attente</option>
 <option>confirmé</option>
 <option>archivé</option>

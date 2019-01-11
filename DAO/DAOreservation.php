@@ -146,21 +146,7 @@ $test = 0;
       { //WIP, break boucle
         if($enregistrementReservation["statut"] != "archivé"){
           if($enregistrementReservation["dateFin"] < $todayDate){
-            $newStatut = 'archivé';
-            $sql = "UPDATE reservation SET statut=:statut
-                WHERE idResa = :id";
-            $requete = $connexion->prepare($sql);
-            $requete->bindParam(':id', $enregistrementReservation["idResa"], PDO::PARAM_INT);
-            $requete->bindParam(':statut', $newStatut , PDO::PARAM_STR);
-
-            try {
-                $requete->execute();
-            } catch (PDOException $e) {
-
-                echo($e);
-                die("...");
-            }
-
+            DAOreservation::requestArchive($enregistrementReservation["idResa"]);
           }
         }
 
@@ -171,6 +157,25 @@ $test = 0;
     } catch (PDOException $e) {
         die("Probleme avec la requete : $sql");
     }
+  }
+
+  public static function requestArchive($id){
+    global $connexion;
+    $newStatut = 'archivé';
+    $sql = "UPDATE reservation SET statut=:statut
+        WHERE idResa = :id";
+    $requete = $connexion->prepare($sql);
+    $requete->bindParam(':id', $id, PDO::PARAM_INT);
+    $requete->bindParam(':statut', $newStatut , PDO::PARAM_STR);
+
+    try {
+        $requete->execute();
+    } catch (PDOException $e) {
+
+        echo($e);
+        die("...");
+    }
+
   }
 
 }

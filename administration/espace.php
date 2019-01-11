@@ -54,10 +54,10 @@ afficherEntete(_("Editer les espaces"));
                       $id++;
                       echo "                  <tr>
                                     <form class'uk-form' action='". $_SERVER['PHP_SELF']."' method='GET'>
-                                    <td><input readonly name='idEspace' type='text' value=".$espace->getId()."></td>
-                                    <td><input name='nomEspace' type='text' value=".$espace->getNom()."></td>
-                                    <td><input name='capaEspace' type='text' value=".$espace->getCapacite()."></td>
-                                    <td><input name='colorEspace' type='color' value=".$espace->getColor()."></td>
+                                    <td><input readonly name='idEspace' type='text' value='".$espace->getId()."'></td>
+                                    <td><input name='nomEspace' type='text' value='".$espace->getNom()."'></td>
+                                    <td><input name='capaEspace' type='text' value='".$espace->getCapacite()."'></td>
+                                    <td><input name='colorEspace' type='color' value='".$espace->getColor()."'></td>
                                     <td><input class='uk-button uk-button-primary' type='submit' value='Modifier'/></td>
                                     <td>        <a href='".$_SERVER['PHP_SELF']."?suppr=".$espace->getId()."' class='uk-button uk-button-danger'>Supprimer</a></td>
                                     </form>
@@ -70,7 +70,7 @@ afficherEntete(_("Editer les espaces"));
                   $id = $id+1;
                   echo "<tr>
                                     <form class'uk-form' action='". $_SERVER['PHP_SELF']."' method='GET'>
-                                    <td><input readonly name='newIdEspace' type='text' value=".$id."></td>"
+                                    <td><input size='3' readonly name='newIdEspace' type='text' value='-'></td>"
                   ?>
                                     <td><input name='newNomEspace' type='text' value=""></td>
                                     <td><input name='newCapaEspace' type='text' value=""></td>

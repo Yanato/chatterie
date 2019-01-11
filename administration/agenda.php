@@ -26,14 +26,36 @@ afficherEntete(_("Editer les espaces"));
            }
        }
 ?>
+<script>
+$(function() {
+
+  // page is now ready, initialize the calendar...
+
+  $('#calendar').fullCalendar({
+          default: 'fr',
+          events: {
+    url: 'json-events-feed.php',
+    type: 'POST', // Send post data
+    error: function() {
+        alert('There was an error while fetching events.');
+    }
+}
+    // put your options and callbacks here
+  })
+
+});
+</script>
         <div class="espacement-bas-element">
 
 
        <div class="content">
          <h2>Liste des réservations :</h2>
          <div class="uk-grid uk-grid-collapse">
+           <div class="uk-width-1-2">
+             <div id='calendar'></div>
 
-           <div class="uk-width-2-3">
+           </div>
+           <div class="uk-width-3-3">
              <ul class="uk-tab" data-uk-tab="{connect:'#my-id'}">
                <li><a href="">Reservation en attente</a></li>
                <li><a href="">Reservation confirmés</a></li>
@@ -53,23 +75,11 @@ afficherEntete(_("Editer les espaces"));
                     </li>
         </ul>
        </div>
-       <div class="uk-width-1-2">
 
-         <canvas id="cnv" width="700" height="500"></canvas>
 
-              <script type="text/javascript">
-              for (i = 0; i < <?php echo $nbrTabJs?>; i++){
-                var nbrCase = <?php echo json_encode($capaciteJs); ?>;
-                var nomCase = <?php echo json_encode($nomJs); ?>;
-                var colorCase = <?php echo json_encode($colorJs); ?>;
-                var long = 40+90*i;
 
-                  drawGrid(nbrCase[i],5,long,80,colorCase[i], nomCase[i]);
-
-              }
-               </script>
 </div>
-</div>
+
 </div>
      </div>
   </div>
