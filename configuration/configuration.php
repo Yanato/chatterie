@@ -20,13 +20,15 @@ define("DAO_UTILISATEUR", $prefixCheminAdministration."DAO/DAOutilisateur.php");
 define("DAO_CONTENU", $prefixCheminAdministration."DAO/DAOcontenu.php");
 define("DAO_ESPACE", $prefixCheminAdministration."DAO/DAOespace.php");
 define("DAO_RESERVATION", $prefixCheminAdministration."DAO/DAOreservation.php");
+define("DAO_COMMENTAIRE", $prefixCheminAdministration."DAO/DAOcommentaire.php");
 
 define("CONTROLEUR_ESPACE", $prefixCheminAdministration."controleur/controleurEspace.php");
 define("CONTROLEUR_RESERVATION", $prefixCheminAdministration."controleur/controleurReservation.php");
-
+define("CONTROLEUR_COMMENTAIRE", $prefixCheminAdministration."controleur/controleurCommentaire.php");
 
 define("MODELE_ESPACE", $prefixCheminAdministration."modele/Espace.class.php");
 define("MODELE_CONTENU", $prefixCheminAdministration."modele/Contenu.class.php");
 define("MODELE_RESERVATION", $prefixCheminAdministration."modele/Reservation.class.php");
+define("MODELE_COMMENTAIRE", $prefixCheminAdministration."modele/Commentaire.class.php");
 
 define("TABLEAU_RESERVATION", $prefixCheminAdministration."administration/tableauResas.php");

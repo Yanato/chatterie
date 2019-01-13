@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Classe Commentaire
+ * @author Pierre
+ */
+
 class Commentaire
 {
     private $idCom;
@@ -97,6 +103,15 @@ class Commentaire
     public function estValide()
     {
       return empty($this->listeMessageErreurActif);
+    }
+        
+    public function toString() 
+    {
+        
+        $msg = "Message de : ".utf8_encode($this->prenomAuteur)." ".utf8_encode($this->nomAuteur)." <br/>";
+        $msg .= "Publié le : ".$this->dateCom." <br/>";
+        $msg .= "Contenu du message : ".utf8_encode($this->message)." <br/>";
+        echo $msg;
     }
     
 }

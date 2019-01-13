@@ -1,5 +1,17 @@
 <?php
 include "recurent/entete.php";
+require_once DAO_COMMENTAIRE;
+require_once CONTROLEUR_COMMENTAIRE;
+
+// Ajout d'un nouveau commentaire
+if (isset($_POST['newCom']) && $_POST['newCom'] == 1)
+{
+    controleurCommentaire::ajouterCommentaire();
+}
+
+$lesCommentaires = DAOcommentaire::getCommentairesAffichables();
+
+
 afficherEntete(_("Accueil"));
 ?>
          <div class="container">
@@ -13,12 +25,13 @@ afficherEntete(_("Accueil"));
 
                      <div class=" uk-width-1-3">
                        <?php
+                                             
                        if (!empty($_GET["message"])) {
                            if ($_GET["message"] === "ok") {
                                echo  '
                          <div class="uk-alert uk-alert-success" data-uk-alert="">
                                                        <a href="" class="uk-alert-close uk-close"></a>
-                                                       <p>Votre message a été envoyé</p>
+                                                       <p>Votre commentaire a été envoyé et sera affiché après vérification.</p>
                                                    </div>';
                            }
                        }
@@ -33,12 +46,18 @@ afficherEntete(_("Accueil"));
                  <div class="uk-grid uk-grid-collapse">
                    <div class=" uk-width-1-3"></div>
                    <div class=" uk-width-1-3">
-						1 message(s) dans le livre d'or <br/>
+						Les derniers messages du livre d'or : <br/><br/>
 						
-						prénom NOM - 01/01/2019 <br/>
-						Message : exemple <br/>
+						<?php 
+						if ( count($lesCommentaires) != 0 ) {
+						    foreach($lesCommentaires as $commentaire) {
+						        echo $commentaire->toString()."<br/>";
+						    }
+						}
+						?>
+
 						
-                         <form class="uk-form" action='#' method='POST'>
+                         <form class="uk-form" action='' method='POST'>
                             <fieldset>
                               <legend>Ajouter votre message au livre d'or : </legend>
                     
@@ -58,6 +77,10 @@ afficherEntete(_("Accueil"));
                                     <textarea name='message' cols="" rows="5" required="" placeholder="Votre message (*)" class="uk-form-width-large"></textarea>
                                 </div>
                                 
+                                 <div class="uk-form-row">
+                                    <input name="newCom" type="hidden" value="1">
+                                </div>      
+                                                         
                                 <div class="uk-form-row">
                                     (*) : Tous les champs sont obligatoires. <br/>
                                     Les messages sont soumis à une vérification avant publication.
